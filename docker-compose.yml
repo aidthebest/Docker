@@ -16,13 +16,15 @@
 version: '3.1'
 
 services:
-
   db:
     image: postgres
     restart: always
+    ports:
+      - 3306:3306
     environment:
-      POSTGRES_USER: vasya
-      POSTGRES_PASSWORD: qwerty123
+      - POSTGRES_DB: app-db
+      - POSTGRES_USER: vasya
+      - POSTGRES_PASSWORD: qwerty123
 
   adminer:
     image: adminer
