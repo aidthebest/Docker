@@ -1,0 +1,31 @@
+#version: '3.7'
+#services:
+#  mysql:
+#    image: mysql:8.0.18
+#    ports:
+#     — '3306:3306'
+#    volumes:
+#     — ./data:/var/lib/mysql
+#    environment:
+#    — MYSQL_RANDOM_ROOT_PASSWORD=yes
+#    — MYSQL_DATABASE=app
+#    — MYSQL_USER=app
+#    — MYSQL_PASSWORD=9mREsvXDs9Gk89Ef
+#
+
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: vasya
+      POSTGRES_PASSWORD: qwerty123
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 3306:3306
